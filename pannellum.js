@@ -491,6 +491,22 @@ function mobileSetHfov() {
     }
 }
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.screens-header') && !event.target.matches('.screens-toggle') && !event.target.matches('#screens-title')) {
+        const screensList = document.getElementById('screens-list');
+        screensList.style.display = 'none';
+        const width = document.body.clientWidth;
+        if (width < 600 && !event.target.matches('#mobile-screens-title') && !event.target.matches('#mobile-screens-toggle')) {
+            const screensList = document.getElementById('mobile-screens-list');
+            screensList.style.display = 'none';
+        }
+    }
+    if (!event.target.matches('#sh-button') && !event.target.matches('#sh-image')) {
+        const shButtons = document.getElementById('sh-buttons');
+        shButtons.style.display = 'none';
+    }
+}
 
 createViewer();
 createScreenList();
