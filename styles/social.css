@@ -1,0 +1,34 @@
+.sh-buttons {
+    display: none;
+}
+/* Style all font awesome icons */
+.fa {
+    font-size: 15px !important;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none !important;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    width: 15px;
+    cursor: pointer;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3b5998;
+    color: white !important;
+    right: 30px;
+    top: 65px;
+    width: 15px;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55acee;
+    color: white !important;
+    right: 70px;
+    top: 64px;
+}

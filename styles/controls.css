@@ -1,0 +1,51 @@
+/* Controls */
+.controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 15px;
+    padding: 10px 10px 15px;
+}
+.ctrl {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 5px;
+}
+.ctrl img {
+    height: 20px;
+    width: 20px;
+}
+
+#fullscreen img {
+    height: 18px;
+    width: 18px;
+}
+#show-controls {
+    display: none;
+    width: 45px;
+}
+#play {
+    display: none;
+}
+#mobile-show-controls {
+    display: none;
+}
+
+.orientation-ctrl {
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 22px;
+    background-position: center;
+    margin-bottom: -10px;
+    width: 22px !important;
+}
+#orientation-active {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem02IDUuOTk5bC01LjYyMSAyLjk4NmMtLjg5OS0uMTA0LTEuODA2LjE5MS0yLjQ3NC44NTktLjY2Mi42NjMtLjk1IDEuNTYxLS44NjIgMi40MjhsLTMuMDQzIDUuNzI4IDUuNzI0LTMuMDQyYy44ODQuMDg5IDEuNzcyLS4yMDUgMi40MzItLjg2NS42MzQtLjYzNC45NjktMS41MjQuODU5LTIuNDczbDIuOTg1LTUuNjIxem0tNS45NyA3LjIyYy0uNjg5IDAtMS4yNS0uNTU5LTEuMjUtMS4yNDktLjAwMS0uNjkxLjU1OS0xLjI1MSAxLjI1LTEuMjUuNjkgMCAxLjI1LjU2IDEuMjUgMS4yNS0uMDAxLjY4OS0uNTYgMS4yNDktMS4yNSAxLjI0OXoiLz48L3N2Zz4=");
+}
+#orientation-stop {
+    display: none;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTFoLTIuMDUxYy0uNDY5LTQuNzI1LTQuMjI0LTguNDgtOC45NDktOC45NXYtMi4wNWgtMnYyLjA1Yy00LjcyNS40Ny04LjQ4IDQuMjI1LTguOTQ5IDguOTVoLTIuMDUxdjJoMi4wNTFjLjQ2OSA0LjcyNSA0LjIyNCA4LjQ4IDguOTQ5IDguOTV2Mi4wNWgydi0yLjA1YzQuNzI1LS40NjkgOC40OC00LjIyNSA4Ljk0OS04Ljk1aDIuMDUxdi0yem0tMTEgOC45MzF2LTMuOTMxaC0ydjMuOTMxYy0zLjYxMS0uNDU0LTYuNDc4LTMuMzItNi45MzEtNi45MzFoMy45MzF2LTJoLTMuOTMxYy40NTMtMy42MTEgMy4zMi02LjQ3NyA2LjkzMS02LjkzMXYzLjkzMWgydi0zLjkzMWMzLjYxMS40NTQgNi40NzggMy4zMTkgNi45MzEgNi45MzFoLTMuOTMxdjJoMy45MzFjLS40NTMgMy42MTEtMy4zMiA2LjQ3Ny02LjkzMSA2LjkzMXptMS03LjkzMWMwIDEuMTA0LS44OTYgMi0yIDJzLTItLjg5Ni0yLTIgLjg5Ni0yIDItMiAyIC44OTYgMiAyeiIvPjwvc3ZnPg==");
+}

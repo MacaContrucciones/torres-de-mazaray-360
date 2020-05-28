@@ -1,0 +1,34 @@
+@import "styles/controls.css";
+@import "styles/messages.css";
+@import "styles/screen-list.css";
+@import "styles/banners.css";
+@import "styles/blueprints/blueprints.css";
+@import "styles/action-buttons.css";
+@import "styles/utilities.css";
+@import "styles/social.css";
+@import "styles/responsive.css";
+
+#container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.hot-spot {
+    height: 15px;
+    width: 15px;
+    background: #c53736;
+    border-radius: 15px;
+}
+.hot-spot span {
+    background-color: #c53736 !important;
+}
+
+.hot-spot span::after {
+    cursor: pointer;
+    border-color: #c53736 transparent transparent transparent !important;
+}
+/* .pnlm-load-box {
+    z-index: -999;
+    opacity: 0;
+} */

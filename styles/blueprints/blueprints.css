@@ -1,0 +1,52 @@
+@import "points.css";
+
+.blueprints {
+    background: rgba(255, 255, 255, 0);
+    top: 80px;
+    right: 5px;
+    overflow: hidden;
+    position: absolute;
+    visibility: inherit;
+    width: 300px;
+    transform-origin: 50% 50%;
+    z-index: 2;
+    text-align: center;
+    display: none;
+}
+.blueprints img {
+    width: 100%;
+    height: 220px;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.blueprints-button {
+    border-radius: 999px;
+    background: #c53736;
+    border: 0px solid rgb(0, 0, 0);
+    cursor: pointer;
+    pointer-events: auto;
+    height: 10px;
+    position: absolute;
+    visibility: inherit;
+    width: 10px;
+    transform-origin: 50% 50%;
+    z-index: 2;
+    transition: width 0s ease 0s, height 0s ease 0s;
+}
+.guide-svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.blueprints-label {
+    font-size: 10px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: -15px;
+}
