@@ -3,7 +3,7 @@ const blueprints = {
     firstFloor: {
         name: 'firstFloor',
         image: 'assets/first-floor.png',
-        blueprintPoints: ['room', 'aisle', 'mainRoom', 'Kitchen', 'auxiliaryRoom']
+        blueprintPoints: ['room', 'room2', 'hab1', 'hab2', 'hab3', 'study', 'Kitchen']
     }
 };
 
@@ -14,20 +14,33 @@ const imageNames = {
         image: 'assets/1.jpg',
         blueprint: blueprints.firstFloor
     },
-    aisle: {
-        name: 'Pasillo',
+    room2: {
+        name: 'Sala 2',
+        image: 'assets/1.jpg',
         blueprint: blueprints.firstFloor
     },
-    mainRoom: {
-        name: 'Habitación principal',
+    hab1: {
+        name: 'Hab. 1',
+        blueprint: blueprints.firstFloor
+    },
+    hab2: {
+        name: 'Hab. 2',
+        blueprint: blueprints.firstFloor
+    },
+    hab3: {
+        name: 'Hab. 3',
+        blueprint: blueprints.firstFloor
+    },
+    study: {
+        name: 'Estudio',
+        blueprint: blueprints.firstFloor
+    },
+    study: {
+        name: 'Estudio',
         blueprint: blueprints.firstFloor
     },
     Kitchen: {
         name: 'Cocina',
-        blueprint: blueprints.firstFloor
-    },
-    auxiliaryRoom: {
-        name: 'Cuarto auxiliar',
         blueprint: blueprints.firstFloor
     }
 };
@@ -49,170 +62,112 @@ function createViewer() {
                 type: 'multires',
                 maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/1',
+                    basePath: './assets/multires/sala',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/1/fallback/%s',
+                    fallbackPath: './assets/multires/sala/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.room.blueprint,
-                gap: 0,
-                hotSpots: [
-                    {
-                        pitch: 0,
-                        yaw: 120,
-                        type: 'scene',
-                        text: imageNames.aisle.name,
-                        sceneId: imageNames.aisle.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 222,
-                        type: 'scene',
-                        text: imageNames.mainRoom.name,
-                        sceneId: imageNames.mainRoom.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 270,
-                        type: 'scene',
-                        text: imageNames.Kitchen.name,
-                        sceneId: imageNames.Kitchen.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 140,
-                        type: 'scene',
-                        text: imageNames.auxiliaryRoom.name,
-                        sceneId: imageNames.auxiliaryRoom.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
+                gap: 0
             },
-            [imageNames.aisle.name]: {
+            [imageNames.room2.name]: {
                 hfov: 100.0,
                 type: 'multires',
                 maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/2',
+                    basePath: './assets/multires/sala2',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/2/fallback/%s',
+                    fallbackPath: './assets/multires/sala2/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.aisle.blueprint,
-                gap: 0,
-                hotSpots: [
-                    {
-                        pitch: 0,
-                        yaw: 300,
-                        type: 'scene',
-                        text: imageNames.room.name,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 252,
-                        type: 'scene',
-                        text: imageNames.mainRoom.name,
-                        sceneId: imageNames.mainRoom.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 180,
-                        type: 'scene',
-                        text: imageNames.auxiliaryRoom.name,
-                        sceneId: imageNames.auxiliaryRoom.name,
-                        cssClass: 'hot-spot'
-                    },
-                ]
+                blueprint: imageNames.room2.blueprint,
+                gap: 0
             },
-            [imageNames.mainRoom.name]: {
+            [imageNames.hab1.name]: {
                 hfov: 100.0,
                 type: 'multires',
                 maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/3',
+                    basePath: './assets/multires/hab1',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/3/fallback/%s',
+                    fallbackPath: './assets/multires/hab1/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.mainRoom.blueprint,
-                gap: 0,
-                hotSpots: [
-                    {
-                        pitch: 3,
-                        yaw: 60,
-                        type: 'scene',
-                        text: imageNames.room.name,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    },
-                ]
+                blueprint: imageNames.hab1.blueprint,
+                gap: 0
+            },
+            [imageNames.hab2.name]: {
+                hfov: 100.0,
+                type: 'multires',
+                maxHfov: 100,
+                multiRes: {
+                    basePath: './assets/multires/hab2',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/hab2/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.hab2.blueprint,
+                gap: 0
+            },
+            [imageNames.hab3.name]: {
+                hfov: 100.0,
+                type: 'multires',
+                maxHfov: 100,
+                multiRes: {
+                    basePath: './assets/multires/hab3',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/hab3/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.hab3.blueprint,
+                gap: 0
+            },
+            [imageNames.study.name]: {
+                hfov: 100.0,
+                type: 'multires',
+                maxHfov: 100,
+                multiRes: {
+                    basePath: './assets/multires/estudio',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/estudio/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.study.blueprint,
+                gap: 0
             },
             [imageNames.Kitchen.name]: {
                 hfov: 100.0,
                 type: 'multires',
                 maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/4',
+                    basePath: './assets/multires/cocina',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/4/fallback/%s',
+                    fallbackPath: './assets/multires/cocina/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.Kitchen.blueprint,
-                gap: 0,
-                hotSpots: [
-                    {
-                        pitch: 0,
-                        yaw: 90,
-                        type: 'scene',
-                        text: imageNames.room.name,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.auxiliaryRoom.name]: {
-                hfov: 100.0,
-                type: 'multires',
-                maxHfov: 100,
-                multiRes: {
-                    basePath: './assets/multires/5',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/5/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.auxiliaryRoom.blueprint,
-                gap: 0,
-                hotSpots: [
-                    {
-                        pitch: 0,
-                        yaw: 35,
-                        type: 'scene',
-                        text: imageNames.aisle.name,
-                        sceneId: imageNames.aisle.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
+                gap: 0
             }
         },
         showControls: false,
