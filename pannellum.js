@@ -3,7 +3,7 @@ const blueprints = {
     firstFloor: {
         name: 'firstFloor',
         image: 'assets/first-floor.png',
-        blueprintPoints: ['room', 'room2', 'hab1', 'hab2', 'hab3', 'study', 'Kitchen']
+        blueprintPoints: ['room', 'hab1', 'hab2', 'hab3', 'study', 'kitchen']
     }
 };
 
@@ -11,12 +11,6 @@ const blueprints = {
 const imageNames = {
     room: {
         name: 'Sala',
-        image: 'assets/1.jpg',
-        blueprint: blueprints.firstFloor
-    },
-    room2: {
-        name: 'Sala 2',
-        image: 'assets/1.jpg',
         blueprint: blueprints.firstFloor
     },
     hab1: {
@@ -35,11 +29,7 @@ const imageNames = {
         name: 'Estudio',
         blueprint: blueprints.firstFloor
     },
-    study: {
-        name: 'Estudio',
-        blueprint: blueprints.firstFloor
-    },
-    Kitchen: {
+    kitchen: {
         name: 'Cocina',
         blueprint: blueprints.firstFloor
     }
@@ -58,13 +48,12 @@ function createViewer() {
         },
         scenes: {
             [imageNames.room.name]: {
-                hfov: 100.0,
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/sala',
+                    basePath: './assets/multires/room',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/sala/fallback/%s',
+                    fallbackPath: './assets/multires/room/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
@@ -73,30 +62,13 @@ function createViewer() {
                 blueprint: imageNames.room.blueprint,
                 gap: 0
             },
-            [imageNames.room2.name]: {
-                hfov: 100.0,
-                type: 'multires',
-                maxHfov: 100,
-                multiRes: {
-                    basePath: './assets/multires/sala2',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/sala2/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.room2.blueprint,
-                gap: 0
-            },
             [imageNames.hab1.name]: {
-                hfov: 100.0,
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/hab1',
+                    basePath: './assets/multires/hab-1',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab1/fallback/%s',
+                    fallbackPath: './assets/multires/hab-1/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
@@ -106,13 +78,12 @@ function createViewer() {
                 gap: 0
             },
             [imageNames.hab2.name]: {
-                hfov: 100.0,
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/hab2',
+                    basePath: './assets/multires/hab-2',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab2/fallback/%s',
+                    fallbackPath: './assets/multires/hab-2/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
@@ -122,13 +93,12 @@ function createViewer() {
                 gap: 0
             },
             [imageNames.hab3.name]: {
-                hfov: 100.0,
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/hab3',
+                    basePath: './assets/multires/hab-3',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab3/fallback/%s',
+                    fallbackPath: './assets/multires/hab-3/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
@@ -138,13 +108,12 @@ function createViewer() {
                 gap: 0
             },
             [imageNames.study.name]: {
-                hfov: 100.0,
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/estudio',
+                    basePath: './assets/multires/study',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/estudio/fallback/%s',
+                    fallbackPath: './assets/multires/study/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
@@ -153,20 +122,19 @@ function createViewer() {
                 blueprint: imageNames.study.blueprint,
                 gap: 0
             },
-            [imageNames.Kitchen.name]: {
-                hfov: 100.0,
+            [imageNames.kitchen.name]: {
+                hfov: 120.0,
                 type: 'multires',
-                maxHfov: 100,
                 multiRes: {
-                    basePath: './assets/multires/cocina',
+                    basePath: './assets/multires/kitchen',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/cocina/fallback/%s',
+                    fallbackPath: './assets/multires/kitchen/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.Kitchen.blueprint,
+                blueprint: imageNames.kitchen.blueprint,
                 gap: 0
             }
         },
