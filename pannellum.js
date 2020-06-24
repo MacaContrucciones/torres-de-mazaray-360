@@ -3,7 +3,7 @@ const blueprints = {
     firstFloor: {
         name: 'firstFloor',
         image: 'assets/first-floor.png',
-        blueprintPoints: ['room', 'habPpal', 'habPpalBalcony', 'boyHab', 'girlHab', 'terrace', 'kitchen']
+        blueprintPoints: ['room', 'habPpal1', 'habPpal2', 'boyHab', 'girlHab', 'terrace', 'diningRoom']
     }
 };
 
@@ -13,12 +13,12 @@ const imageNames = {
         name: 'Sala',
         blueprint: blueprints.firstFloor
     },
-    habPpal: {
-        name: 'Hab. Principal',
+    habPpal1: {
+        name: 'Hab. Principal 1',
         blueprint: blueprints.firstFloor
     },
-    habPpalBalcony: {
-        name: 'Hab. Principal Balcón',
+    habPpal2: {
+        name: 'Hab. Principal 2',
         blueprint: blueprints.firstFloor
     },
     boyHab: {
@@ -33,8 +33,8 @@ const imageNames = {
         name: 'Terraza',
         blueprint: blueprints.firstFloor
     },
-    kitchen: {
-        name: 'Cocina',
+    diningRoom: {
+        name: 'Comedor',
         blueprint: blueprints.firstFloor
     }
 };
@@ -66,34 +66,34 @@ function createViewer() {
                 blueprint: imageNames.room.blueprint,
                 gap: 0
             },
-            [imageNames.habPpal.name]: {
+            [imageNames.habPpal1.name]: {
                 hfov: 120.0,
                 type: 'multires',
                 multiRes: {
-                    basePath: './assets/multires/hab-ppal',
+                    basePath: './assets/multires/hab-ppal-1',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab-ppal/fallback/%s',
+                    fallbackPath: './assets/multires/hab-ppal-1/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.habPpal.blueprint,
+                blueprint: imageNames.habPpal1.blueprint,
                 gap: 0
             },
-            [imageNames.habPpalBalcony.name]: {
+            [imageNames.habPpal2.name]: {
                 hfov: 120.0,
                 type: 'multires',
                 multiRes: {
-                    basePath: './assets/multires/hab-ppal-balcony',
+                    basePath: './assets/multires/hab-ppal-2',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab-ppal-balcony/fallback/%s',
+                    fallbackPath: './assets/multires/hab-ppal-2/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.habPpalBalcony.blueprint,
+                blueprint: imageNames.habPpal2.blueprint,
                 gap: 0
             },
             [imageNames.boyHab.name]: {
@@ -141,19 +141,19 @@ function createViewer() {
                 blueprint: imageNames.terrace.blueprint,
                 gap: 0
             },
-            [imageNames.kitchen.name]: {
+            [imageNames.diningRoom.name]: {
                 hfov: 120.0,
                 type: 'multires',
                 multiRes: {
-                    basePath: './assets/multires/kitchen',
+                    basePath: './assets/multires/dining-room',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/kitchen/fallback/%s',
+                    fallbackPath: './assets/multires/dining-room/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.kitchen.blueprint,
+                blueprint: imageNames.diningRoom.blueprint,
                 gap: 0
             }
         },
