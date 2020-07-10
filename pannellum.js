@@ -9,32 +9,39 @@ const blueprints = {
 
 // Images
 const imageNames = {
-    room: {
-        name: 'Sala',
-        blueprint: blueprints.firstFloor
-    },
-    habPpal1: {
-        name: 'Hab. Principal 1',
-        blueprint: blueprints.firstFloor
-    },
-    habPpal2: {
-        name: 'Hab. Principal 2',
-        blueprint: blueprints.firstFloor
-    },
-    boyHab: {
-        name: 'Hab. niño',
-        blueprint: blueprints.firstFloor
-    },
-    girlHab: {
-        name: 'Hab. niña',
+    diningRoom: {
+        name: 'Comedor',
+        stringName: 'Comedor',
         blueprint: blueprints.firstFloor
     },
     terrace: {
-        name: 'Terraza',
+        name: 'Balcon terraza',
+        stringName: 'Balcon terraza',
         blueprint: blueprints.firstFloor
     },
-    diningRoom: {
-        name: 'Comedor',
+    room: {
+        name: 'Sala',
+        stringName: 'Sala',
+        blueprint: blueprints.firstFloor
+    },
+    habPpal1: {
+        name: 'Alcoba principal',
+        stringName: 'Alcoba principal',
+        blueprint: blueprints.firstFloor
+    },
+    habPpal2: {
+        name: 'Alcoba principal 2',
+        stringName: 'Alcoba principal',
+        blueprint: blueprints.firstFloor
+    },
+    girlHab: {
+        name: 'Alcoba 1',
+        stringName: 'Alcoba 1',
+        blueprint: blueprints.firstFloor
+    },
+    boyHab: {
+        name: 'Alcoba 2',
+        stringName: 'Alcoba 2',
         blueprint: blueprints.firstFloor
     }
 };
@@ -47,7 +54,7 @@ let viewer = {};
 function createViewer() {
     viewer = pannellum.viewer(container, {
         default: {
-            firstScene: imageNames.room.name,
+            firstScene: imageNames.diningRoom.name,
             sceneFadeDuration: 2000
         },
         scenes: {
@@ -310,12 +317,14 @@ function createScreenList() {
     const screensList = document.getElementById('screens-list');
     const mobileScreensList = document.getElementById('mobile-screens-list');
     const currentScene = viewer.getScene();
+    let stringCurrentScene = currentScene;
     for (const image in imageNames) {
         if (imageNames.hasOwnProperty(image)) {
             const element = imageNames[image];
             let div = document.createElement('div');
             div.setAttributeNS(null, 'id', element.name);
             if (currentScene === element.name) {
+                stringCurrentScene = element.stringName;
                 div.setAttributeNS(null, 'class', 'screen-item screen-selected');
             } else {
                 div.setAttributeNS(null, 'class', 'screen-item');
@@ -327,11 +336,11 @@ function createScreenList() {
                 div.addEventListener('click', () => loadScene(element.name) & toggleMobileScreenList());
                 mobileScreensList.appendChild(div);
             }
-            div.innerHTML += element.name;
+            div.innerHTML += element.stringName;
         }
     }
-    document.getElementById('screens-title').innerHTML = currentScene;
-    document.getElementById('mobile-screens-title').innerHTML = currentScene;
+    document.getElementById('screens-title').innerHTML = stringCurrentScene;
+    document.getElementById('mobile-screens-title').innerHTML = stringCurrentScene;
 }
 function loadScene(sceneId) {
     if (sceneId !== viewer.getScene()) {
@@ -340,11 +349,12 @@ function loadScene(sceneId) {
     }
 }
 function setScene(sceneId) {
-    document.getElementById('screens-title').innerHTML = sceneId;
-    document.getElementById('mobile-screens-title').innerHTML = sceneId;
     const currentScene = document.getElementById(sceneSelected);
     currentScene.setAttributeNS(null, 'class', 'screen-item');
-    document.getElementById(sceneId).setAttributeNS(null, 'class', 'screen-item screen-selected');
+    const newScene = document.getElementById(sceneId);
+    newScene.setAttributeNS(null, 'class', 'screen-item screen-selected');
+    document.getElementById('screens-title').innerHTML = newScene.innerHTML;
+    document.getElementById('mobile-screens-title').innerHTML = newScene.innerHTML;
     sceneSelected = viewer.getScene();
 }
 
