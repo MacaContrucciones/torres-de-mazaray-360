@@ -46,6 +46,7 @@
     display: inline-block;
     padding-right: 5px;
     margin-bottom: 0;
+    font-weight: bold;
 }
 .urbanization-information #extra {
     font-size: 10px;

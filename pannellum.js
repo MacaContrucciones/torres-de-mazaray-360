@@ -58,6 +58,74 @@ function createViewer() {
             sceneFadeDuration: 2000
         },
         scenes: {
+            [imageNames.diningRoom.name]: {
+                hfov: 120.0,
+                yaw: 315,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/dining-room',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/dining-room/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.diningRoom.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: -2,
+                        yaw: 271,
+                        type: 'scene',
+                        text: imageNames.room.stringName,
+                        sceneId: imageNames.room.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: -2,
+                        yaw: 325,
+                        type: 'scene',
+                        text: imageNames.terrace.stringName,
+                        sceneId: imageNames.terrace.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
+            },
+            [imageNames.terrace.name]: {
+                hfov: 120.0,
+                yaw: 340,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/terrace',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/terrace/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.terrace.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: 2,
+                        yaw: 132,
+                        type: 'scene',
+                        text: imageNames.diningRoom.stringName,
+                        sceneId: imageNames.diningRoom.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 3,
+                        yaw: 225,
+                        type: 'scene',
+                        text: imageNames.room.stringName,
+                        sceneId: imageNames.room.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
+            },
             [imageNames.room.name]: {
                 hfov: 120.0,
                 type: 'multires',
@@ -71,10 +139,37 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.room.blueprint,
-                gap: 0
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: 1,
+                        yaw: 50,
+                        type: 'scene',
+                        text: imageNames.diningRoom.stringName,
+                        sceneId: imageNames.diningRoom.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 340,
+                        type: 'scene',
+                        text: imageNames.terrace.stringName,
+                        sceneId: imageNames.terrace.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 228,
+                        type: 'scene',
+                        text: imageNames.habPpal1.stringName,
+                        sceneId: imageNames.habPpal1.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
             },
             [imageNames.habPpal1.name]: {
                 hfov: 120.0,
+                yaw: 210,
                 type: 'multires',
                 multiRes: {
                     basePath: './assets/multires/hab-ppal-1',
@@ -86,10 +181,37 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.habPpal1.blueprint,
-                gap: 0
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: -3,
+                        yaw: 263,
+                        type: 'scene',
+                        text: imageNames.habPpal2.stringName,
+                        sceneId: imageNames.habPpal2.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 15,
+                        type: 'scene',
+                        text: imageNames.boyHab.stringName,
+                        sceneId: imageNames.boyHab.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 40,
+                        type: 'scene',
+                        text: imageNames.girlHab.stringName,
+                        sceneId: imageNames.girlHab.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
             },
             [imageNames.habPpal2.name]: {
                 hfov: 120.0,
+                yaw: 130,
                 type: 'multires',
                 multiRes: {
                     basePath: './assets/multires/hab-ppal-2',
@@ -101,25 +223,21 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.habPpal2.blueprint,
-                gap: 0
-            },
-            [imageNames.boyHab.name]: {
-                hfov: 120.0,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/boy-hab',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/boy-hab/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.boyHab.blueprint,
-                gap: 0
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: 0,
+                        yaw: 81,
+                        type: 'scene',
+                        text: imageNames.habPpal1.stringName,
+                        sceneId: imageNames.habPpal1.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
             },
             [imageNames.girlHab.name]: {
                 hfov: 120.0,
+                yaw: 30,
                 type: 'multires',
                 multiRes: {
                     basePath: './assets/multires/girl-hab',
@@ -131,37 +249,43 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.girlHab.blueprint,
-                gap: 0
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: 3,
+                        yaw: 155,
+                        type: 'scene',
+                        text: imageNames.room.stringName,
+                        sceneId: imageNames.room.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
             },
-            [imageNames.terrace.name]: {
+            [imageNames.boyHab.name]: {
                 hfov: 120.0,
+                yaw: 340,
                 type: 'multires',
                 multiRes: {
-                    basePath: './assets/multires/terrace',
+                    basePath: './assets/multires/boy-hab',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/terrace/fallback/%s',
+                    fallbackPath: './assets/multires/boy-hab/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.terrace.blueprint,
-                gap: 0
-            },
-            [imageNames.diningRoom.name]: {
-                hfov: 120.0,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/dining-room',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/dining-room/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.diningRoom.blueprint,
-                gap: 0
+                blueprint: imageNames.boyHab.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        pitch: -1,
+                        yaw: 178,
+                        type: 'scene',
+                        text: imageNames.habPpal1.stringName,
+                        sceneId: imageNames.habPpal1.name,
+                        cssClass: 'hot-spot'
+                    }
+                ]
             }
         },
         showControls: false,
