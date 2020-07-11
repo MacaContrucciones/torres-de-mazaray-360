@@ -1,60 +1,28 @@
-#kitchen {
-    right: 197px;
-    top: 88px;
+#room {
+    right: 186px;
+    top: 102px;
 }
-#auxiliaryOne {
-    right: 270px;
-    top: 170px;
+#habPpal1 {
+    right: 76px;
+    top: 77px;
 }
-#auxiliaryTwo {
-    right: 221px;
-    top: 162px;
+#habPpal2 {
+    right: 18px;
+    top: 58px;
+}
+#boyHab {
+    right: 79px;
+    top: 133px;
+}
+#girlHab {
+    right: 104px;
+    top: 132px;
+}
+#terrace {
+    right: 211px;
+    top: 163px;
 }
 #diningRoom {
-    right: 126px;
-    top: 64px;
-}
-#studyRoom {
-    right: 54px;
-    top: 120px;
-}
-#boyRoom {
-    right: 206px;
-    top: 66px;
-}
-#girlRoom {
-    right: 165px;
-    top: 67px;
-}
-#principalRoom {
-    right: 216px;
-    top: 168px;
-}
-#tvRoom {
-    right: 86px;
-    top: 120px;
-}
-#bbqTerrace {
-    right: 248px;
-    top: 177px;
-}
-#livingRoomTerrace {
-    right: 42px;
-    top: 112px;
-}
-#secondFloorPoint {
-    right: 100px;
-    top: 136px;
-}
-#firstFloorPoint {
-    right: 137px;
-    top: 136px;
-}
-#terracePoint {
-    right: 100px;
-    top: 168px;
-}
-#terraceSecondFloor {
-    right: 87px;
-    top: 130px;
+    right: 270px;
+    top: 108px;
 }

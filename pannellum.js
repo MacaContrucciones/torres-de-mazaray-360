@@ -1,9 +1,9 @@
 // Blueprints
 const blueprints = {
-    firstFloor: {
-        name: 'firstFloor',
-        image: 'assets/first-floor.png',
-        blueprintPoints: ['room', 'habPpal1', 'habPpal2', 'boyHab', 'girlHab', 'terrace', 'diningRoom']
+    plane: {
+        name: 'plane',
+        image: 'assets/plane.png',
+        blueprintPoints: ['diningRoom', 'terrace', 'room', 'habPpal1', 'habPpal2', 'girlHab', 'boyHab']
     }
 };
 
@@ -12,37 +12,37 @@ const imageNames = {
     diningRoom: {
         name: 'Comedor',
         stringName: 'Comedor',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     terrace: {
         name: 'Balcon terraza',
         stringName: 'Balcon terraza',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     room: {
         name: 'Sala',
         stringName: 'Sala',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     habPpal1: {
         name: 'Alcoba principal',
         stringName: 'Alcoba principal',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     habPpal2: {
         name: 'Alcoba principal 2',
         stringName: 'Alcoba principal',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     girlHab: {
         name: 'Alcoba 1',
         stringName: 'Alcoba 1',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     },
     boyHab: {
         name: 'Alcoba 2',
         stringName: 'Alcoba 2',
-        blueprint: blueprints.firstFloor
+        blueprint: blueprints.plane
     }
 };
 let sceneSelected = '';
@@ -72,7 +72,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.diningRoom.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: -2,
@@ -106,7 +106,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.terrace.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: 2,
@@ -139,7 +139,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.room.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: 1,
@@ -181,7 +181,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.habPpal1.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: -3,
@@ -223,7 +223,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.habPpal2.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: 0,
@@ -249,7 +249,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.girlHab.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: 3,
@@ -275,7 +275,7 @@ function createViewer() {
                     cubeResolution: 2600
                 },
                 blueprint: imageNames.boyHab.blueprint,
-                gap: 0,
+                gap: 90,
                 hotSpots: [
                     {
                         pitch: -1,
