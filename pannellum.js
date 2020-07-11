@@ -596,6 +596,9 @@ function shFacebook() {
 function shTwitter() {
     window.open('https://twitter.com/intent/tweet?url=' + location.href);
 }
+function openLink(link) {
+    window.open(link);
+}
 
 // Bootstrap social tooltip
 $(document).ready(function () {
