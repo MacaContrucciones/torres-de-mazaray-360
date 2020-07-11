@@ -1,3 +1,11 @@
+#diningRoom {
+    right: 270px;
+    top: 108px;
+}
+#terrace {
+    right: 211px;
+    top: 163px;
+}
 #room {
     right: 186px;
     top: 102px;
@@ -17,12 +25,4 @@
 #girlHab {
     right: 104px;
     top: 132px;
-}
-#terrace {
-    right: 211px;
-    top: 163px;
-}
-#diningRoom {
-    right: 270px;
-    top: 108px;
 }

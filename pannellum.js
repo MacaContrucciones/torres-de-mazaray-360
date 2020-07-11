@@ -526,7 +526,7 @@ function addBlueprintPoints() {
                 divPoint.addEventListener('click', () => loadScene(imageNames[point].name));
                 let label = document.createElement('label');
                 label.setAttributeNS(null, 'class', 'blueprints-label');
-                label.innerHTML = imageNames[point].name;
+                label.innerHTML = imageNames[point].stringName;
                 divPoint.appendChild(label);
                 container.appendChild(divPoint);
             }

@@ -33,51 +33,36 @@
     .blueprints img {
         height: 170px;
     }
-    #kitchen {
-        right: 165px;
-        top: 67px;
-    }
-    #auxiliaryOne {
-        right: 229px;
-        top: 128px;
-    }
-    #auxiliaryTwo {
-        right: 182px;
-        top: 131px;
-    }
-    #diningRoom {
-        right: 108px;
-        top: 57px;
-    }
-    #studyRoom {
-        right: 50px;
-        top: 93px;
-    }
-    #boyRoom {
-        right: 168px;
-        top: 72px;
-    }
-    #girlRoom {
-        right: 139px;
-        top: 67px;
-    }
-    #principalRoom {
-        right: 168px;
-        top: 134px;
-    }
-    #tvRoom {
-        right: 73px;
-        top: 98px;
-    }
-    #bbqTerrace {
-        right: 234px;
-        top: 143px;
-    }
-    #livingRoomTerrace {
-        right: 36px;
-        top: 90px;
-    }
     .mobile-urbanization-image {
         display: block;
+    }
+    /* Blueprint points */
+    #diningRoom {
+        right: 234px;
+        top: 86px;
+    }
+    #terrace {
+        right: 185px;
+        top: 130px;
+    }
+    #room {
+        right: 163px;
+        top: 79px;
+    }
+    #habPpal1 {
+        right: 67px;
+        top: 57px;
+    }
+    #habPpal2 {
+        right: 12px;
+        top: 42px;
+    }
+    #boyHab {
+        right: 95px;
+        top: 106px;
+    }
+    #girlHab {
+        right: 68px;
+        top: 106px;
     }
 }
