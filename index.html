@@ -147,7 +147,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             </div>
             <!-- Information button -->
             <div class="action-button-container">
-                <a id="information-button" class="action-button">
+                <a id="information-button" class="action-button" data-toggle="modal" data-target="#information-modal">
                     <img
                         src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDE3LjM5OCA0MTcuMzk4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MTcuMzk4IDQxNy4zOTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzk1LjU1MiwyODQuODY5bC00MS45OTMtMzQuNDA0Yy0yNy4zNTgtMjIuNDEzLTY5LjgyNi0yMC4yOTItOTQuNzg0LDQuNjY1bC0xLjY2NywxLjY2NyAgICBjLTQuMTg1LDQuMTg1LTExLjAwMiw0LjE1Mi0xNS4xMjgsMC4wMjVsLTgxLjEzNS04MS4xMzVjLTQuMDk2LTQuMDk2LTQuMTc3LTEwLjY4NC0wLjIzLTE0Ljg2NyAgICBjMC4wNzItMC4wNzYsMC4xNDUtMC4xNTEsMC4yMTktMC4yMjZsLTAuMjIzLDAuMjIzbDAsMGMwLjA3NC0wLjA3NCwwLjE0OC0wLjE0OSwwLjIyMi0wLjIyMyAgICBjMjQuODItMjUuMDU4LDI3LjE5NS02Ny43MjIsNS40NTMtOTUuMjFsLTM0LjA1OS00My4wNTlDMTEwLjMzNS01LjM1Myw3Mi4yODctNy40OTEsNDcuMzMyLDE3LjQ2NGwtNi4yNTYsNi4yNTYgICAgYy00NC4zMjUsNDQuMzI1LTU0Ljc3LDEyNC4yMTUtMjEuNTIyLDE3Ny4zMzJjMCwwLDE5LjU3Miw0NS4zOSw4NS42MjIsMTExLjQ0czExMS40NCw4NS42MjIsMTExLjQ0LDg1LjYyMiAgICBjNTMuNjEzLDMyLjQzOCwxMzIuOTgsMjIuODMsMTc3LjI5NS0yMS40ODVsNS45NTgtNS45NThDNDI0Ljg0MywzNDUuNjk3LDQyMi44OTIsMzA3LjI2NywzOTUuNTUyLDI4NC44Njl6IE0zNjkuNjk4LDM0MC41MDEgICAgbC01Ljk1OCw1Ljk1OGMtMzAuNDI0LDMwLjQyNC04OC4yMiwzNy40MjYtMTI1LjAzOCwxNS4xNWwtMi41MDUtMS41MTZsLTIuNjg4LTEuMTU5Yy0zLjMtMS40MjMtMTEuNTcyLTUuOTA4LTI0LjA3OC0xNC4yOTYgICAgYy0yMi4yMTEtMTQuODk4LTQ3LjE1My0zNS4zODItNzQuMDg2LTYyLjMxNXMtNDcuNDE4LTUxLjg3NS02Mi4zMTUtNzQuMDg2Yy04LjM4OC0xMi41MDYtMTIuODc0LTIwLjc3OC0xNC4yOTYtMjQuMDc4ICAgIGwtMS4yODgtMi45ODdsLTEuNzI2LTIuNzU3QzMzLjMzNSwxNDIuNjUzLDQwLjU1Miw4NC41ODUsNzEuMjQ2LDUzLjg5MWw2LjI1Ni02LjI1NmM2LjkzNy02LjkzNywxNS4yMzEtNi40NjUsMjEuMjYzLDEuMTYxICAgIGwzNC4wNTksNDMuMDU5YzguMzk4LDEwLjYxNyw3LjMxMSwyOS4xMDEtMi4zODEsMzguNzk0Yy0yMC42MTgsMjAuODU5LTIwLjUxNiw1NC40NjIsMC4yMzMsNzUuMjFsODEuMTM1LDgxLjEzNSAgICBjMjAuNzk5LDIwLjc5OSw1NC42MzIsMjAuODExLDc1LjQ2OS0wLjAyNWwxLjY2Ny0xLjY2N2M5LjQ2LTkuNDYsMjcuMTkyLTEwLjMzNiwzNy41NzQtMS44M2w0MS45OTMsMzQuNDA0ICAgIEMzNzYuMzU0LDMyNC4yOTgsMzc2LjgxMywzMzMuMzg3LDM2OS42OTgsMzQwLjUwMXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSIiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" />
@@ -216,24 +216,33 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 
     <!-- Information modal -->
     <div class="modal fade" id="information-modal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Contactenos</h4>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-
                 <!-- Modal body -->
-                <div class="modal-body text-center">
-                    <h4>
-                        Foresta Residencial
+                <div class="modal-body text-center information-modal">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 id="title">
+                        CONTÁCTANOS
                     </h4>
-                    <p>
-                        Cel:
-                        <a href="tel:+573165557775">316 5557775</a>
-                    </p>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    <a href="tel:+573165557775">316 8887778</a>
+                    <br>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    <a href="tel:+573165557775">318 3730073</a>
+                    <br>
+                    <h5 id="title" class="mt-3">
+                        SALA DE VENTAS
+                    </h5>
+                    <h6 class="mt-3"> HORARIO </h6>
+                    <label>Lun a Sab: 8 am - 6 pm</label> <br>
+                    <label>Dom: 10 am - 6 pm</label>
+                    <h6 class="mt-2"> DIRECCIÓN </h6>
+                    <p>Av 19 No 9-60</p>
+                    <h6 class="mt-2"> PÁGINAS WEB </h6>
+                    <a href="https://www.cristalesllanometa.com">cristalesllanometa.com</a>
+                    <br>
+                    <a href="https://www.macaconstrucciones.com">macaconstrucciones.com</a>
                 </div>
 
             </div>

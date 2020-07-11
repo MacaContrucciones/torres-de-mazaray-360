@@ -2,7 +2,7 @@
     display: none;
 }
 /* Style all font awesome icons */
-.fa {
+.sh-buttons .fa {
     font-size: 15px !important;
     padding: 10px;
     text-align: center;

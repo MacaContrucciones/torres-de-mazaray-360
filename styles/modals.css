@@ -1,0 +1,17 @@
+.information-modal #title {
+    color: #901f23;
+    font-weight: bold;
+}
+.information-modal .fa {
+    font-size: 20px;
+    color: #901f23;
+}
+.information-modal a {
+    color: #901f23;
+}
+.information-modal .close {
+    padding: 1rem 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

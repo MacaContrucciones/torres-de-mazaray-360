@@ -7,6 +7,7 @@
 @import "styles/utilities.css";
 @import "styles/social.css";
 @import "styles/responsive.css";
+@import "styles/modals.css";
 
 #container {
     position: absolute;

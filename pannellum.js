@@ -623,10 +623,12 @@ window.onclick = function (event) {
             screensList.style.display = 'none';
         }
     }
-    if (!event.target.matches('#sh-button') && !event.target.matches('#sh-image')) {
-        const shButtons = document.getElementById('sh-buttons');
-        shButtons.style.display = 'none';
-    }
+    // if (!event.target.matches('#sh-button') && !event.target.matches('#sh-image')) {
+    //     const shButtons = document.getElementById('sh-buttons');
+    //     if (shButtons.style.display === 'block') {
+    //         shButtons.style.display = 'none';
+    //     }
+    // }
 }
 
 createViewer();
