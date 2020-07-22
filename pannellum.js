@@ -376,6 +376,7 @@ function toggleControls() {
     const banners = document.getElementById('banners');
     const actionButtons = document.getElementById('action-buttons');
     const blueprints = document.getElementById('blueprints');
+    const shButtons = document.getElementById('sh-buttons');
     if (controls.style.display === 'none') {
         controls.style.display = 'block';
         showControls.style.display = 'none';
@@ -387,6 +388,7 @@ function toggleControls() {
         banners.style.display = 'none';
         actionButtons.style.display = 'none';
         blueprints.style.display = 'none';
+        shButtons.style.display = 'none';
     }
 }
 function mobileToggleControls() {
