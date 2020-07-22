@@ -142,7 +142,7 @@ function createViewer() {
                 gap: 90,
                 hotSpots: [
                     {
-                        pitch: 1,
+                        pitch: 0,
                         yaw: 50,
                         type: 'scene',
                         text: imageNames.diningRoom.stringName,
@@ -159,10 +159,26 @@ function createViewer() {
                     },
                     {
                         pitch: 0,
-                        yaw: 228,
+                        yaw: 231,
                         type: 'scene',
                         text: imageNames.habPpal1.stringName,
                         sceneId: imageNames.habPpal1.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 241,
+                        type: 'scene',
+                        text: imageNames.boyHab.stringName,
+                        sceneId: imageNames.boyHab.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: 0,
+                        yaw: 244,
+                        type: 'scene',
+                        text: imageNames.girlHab.stringName,
+                        sceneId: imageNames.girlHab.name,
                         cssClass: 'hot-spot'
                     }
                 ]
@@ -253,7 +269,7 @@ function createViewer() {
                 hotSpots: [
                     {
                         pitch: 3,
-                        yaw: 155,
+                        yaw: 157,
                         type: 'scene',
                         text: imageNames.room.stringName,
                         sceneId: imageNames.room.name,
@@ -283,6 +299,14 @@ function createViewer() {
                         type: 'scene',
                         text: imageNames.habPpal1.stringName,
                         sceneId: imageNames.habPpal1.name,
+                        cssClass: 'hot-spot'
+                    },
+                    {
+                        pitch: -1,
+                        yaw: 135,
+                        type: 'scene',
+                        text: imageNames.room.stringName,
+                        sceneId: imageNames.room.name,
                         cssClass: 'hot-spot'
                     }
                 ]
