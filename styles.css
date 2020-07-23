@@ -10,6 +10,9 @@
 @import "styles/modals.css";
 @import "styles/miniatures.css";
 
+:root {
+    --primary-color: #c53736;
+}
 #container {
     position: absolute;
     top: 0;
@@ -19,16 +22,16 @@
 .hot-spot {
     height: 15px;
     width: 15px;
-    background: #c53736;
+    background-color: var(--primary-color);
     border-radius: 15px;
 }
 .hot-spot span {
-    background-color: #c53736 !important;
+    background-color: var(--primary-color) !important;
 }
 
 .hot-spot span::after {
     cursor: pointer;
-    border-color: #c53736 transparent transparent transparent !important;
+    border-color: var(--primary-color) transparent transparent transparent !important;
 }
 /* .pnlm-load-box {
     z-index: -999;
