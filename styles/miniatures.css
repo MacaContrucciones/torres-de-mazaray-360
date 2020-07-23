@@ -7,10 +7,11 @@
     text-align: center;
 }
 .miniatures .images {
-    height: 220px;
+    height: calc(100vh - 570px);
     overflow-y: scroll;
     margin-top: 5px;
     margin-bottom: 5px;
+    min-height: 60px;
 }
 .miniatures img {
     cursor: pointer;
