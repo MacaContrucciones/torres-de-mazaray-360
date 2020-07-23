@@ -75,6 +75,35 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             </div>
         </div>
 
+        <!-- MINIATURES -->
+        <div class="miniatures" id="miniatures">
+            <a class="arrow" data-scroll-modifier='-1' href="JavaScript:void(0);" onmouseenter="startScrolling(-1)"
+                onmouseleave="stopScrolling()">
+                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </a>
+            <div class="images" id="images">
+                <img src="assets/miniatures/dining-room.png" alt="Dinning room" class="w-100"
+                    onclick="loadScene('Comedor')" data-toggle="tooltip" data-placement="bottom" title="Comedor">
+                <img src="assets/miniatures/room.png" alt="Room" class="w-100" onclick="loadScene('Sala')"
+                    data-toggle="tooltip" data-placement="bottom" title="Sala">
+                <img src="assets/miniatures/terrace.png" alt="Terrace" class="w-100"
+                    onclick="loadScene('Balcon terraza')" data-toggle="tooltip" data-placement="bottom"
+                    title="Balcon terraza">
+                <img src="assets/miniatures/Hab1.png" alt="Hab1" class="w-100" onclick="loadScene('Alcoba principal')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba principal">
+                <img src="assets/miniatures/Hab2.png" alt="Hab2" class="w-100" onclick="loadScene('Alcoba principal 2')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba principal">
+                <img src="assets/miniatures/girl-hab.png" alt="Girl hab" class="w-100" onclick="loadScene('Alcoba 1')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba 1">
+                <img src="assets/miniatures/boy-hab.png" alt="Boy hab" class="w-100" onclick="loadScene('Alcoba 2')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba 2">
+            </div>
+            <a class="arrow" data-scroll-modifier='1' href="JavaScript:void(0);" onmouseenter="startScrolling(1)"
+                onmouseleave="stopScrolling()">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </div>
+
         <!-- BANNERS -->
         <div id="banners">
             <!-- Top -->
@@ -165,7 +194,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             <!-- Share button -->
             <div class="action-button-container" id="sh-button-container">
                 <a id="sh-button" class="action-button" onclick="toggleShButtons()">
-                    <img
+                    <img id="sh-image"
                         src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSItMjEgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJtMzg5LjMzMjAzMSAxNjBjLTQ0LjA5Mzc1IDAtODAtMzUuODgyODEyLTgwLTgwczM1LjkwNjI1LTgwIDgwLTgwYzQ0LjA5NzY1NyAwIDgwIDM1Ljg4MjgxMiA4MCA4MHMtMzUuOTAyMzQzIDgwLTgwIDgwem0wLTEyOGMtMjYuNDUzMTI1IDAtNDggMjEuNTIzNDM4LTQ4IDQ4czIxLjU0Njg3NSA0OCA0OCA0OCA0OC0yMS41MjM0MzggNDgtNDgtMjEuNTQ2ODc1LTQ4LTQ4LTQ4em0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSIiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PHBhdGggZD0ibTM4OS4zMzIwMzEgNTEyYy00NC4wOTM3NSAwLTgwLTM1Ljg4MjgxMi04MC04MHMzNS45MDYyNS04MCA4MC04MGM0NC4wOTc2NTcgMCA4MCAzNS44ODI4MTIgODAgODBzLTM1LjkwMjM0MyA4MC04MCA4MHptMC0xMjhjLTI2LjQ1MzEyNSAwLTQ4IDIxLjUyMzQzOC00OCA0OHMyMS41NDY4NzUgNDggNDggNDggNDgtMjEuNTIzNDM4IDQ4LTQ4LTIxLjU0Njg3NS00OC00OC00OHptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im04MCAzMzZjLTQ0LjA5NzY1NiAwLTgwLTM1Ljg4MjgxMi04MC04MHMzNS45MDIzNDQtODAgODAtODAgODAgMzUuODgyODEyIDgwIDgwLTM1LjkwMjM0NCA4MC04MCA4MHptMC0xMjhjLTI2LjQ1MzEyNSAwLTQ4IDIxLjUyMzQzOC00OCA0OHMyMS41NDY4NzUgNDggNDggNDggNDgtMjEuNTIzNDM4IDQ4LTQ4LTIxLjU0Njg3NS00OC00OC00OHptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0xMzUuNzAzMTI1IDI0MC40MjU3ODFjLTUuNTcwMzEzIDAtMTAuOTg4MjgxLTIuOTAyMzQzLTEzLjkxMDE1Ni04LjA2MjUtNC4zNzUtNy42Nzk2ODctMS43MDcwMzEtMTcuNDUzMTI1IDUuOTcyNjU2LTIxLjgyNDIxOWwxOTcuOTUzMTI1LTExMi44NTU0NjhjNy42NTYyNS00LjQxNDA2MyAxNy40NDkyMTktMS43MjY1NjMgMjEuODAwNzgxIDUuOTc2NTYyIDQuMzc1IDcuNjc5Njg4IDEuNzA3MDMxIDE3LjQ0OTIxOS01Ljk3MjY1NiAyMS44MjQyMTlsLTE5Ny45NTMxMjUgMTEyLjg1MTU2M2MtMi40OTYwOTQgMS40MDYyNS01LjIwMzEyNSAyLjA4OTg0My03Ljg5MDYyNSAyLjA4OTg0M3ptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0zMzMuNjMyODEyIDQxNi40MjU3ODFjLTIuNjg3NSAwLTUuMzk4NDM3LS42ODM1OTMtNy44OTQ1MzEtMi4xMDkzNzVsLTE5Ny45NTMxMjUtMTEyLjg1NTQ2OGMtNy42Nzk2ODctNC4zNzEwOTQtMTAuMzQzNzUtMTQuMTQ0NTMyLTUuOTcyNjU2LTIxLjgyNDIxOSA0LjM1MTU2Mi03LjY5OTIxOSAxNC4xMjUtMTAuMzY3MTg4IDIxLjgwNDY4OC01Ljk3MjY1N2wxOTcuOTQ5MjE4IDExMi44NTE1NjNjNy42Nzk2ODggNC4zNzUgMTAuMzQ3NjU2IDE0LjE0NDUzMSA1Ljk3NjU2MyAyMS44MjQyMTktMi45NDUzMTMgNS4xODM1OTQtOC4zNjMyODEgOC4wODU5MzctMTMuOTEwMTU3IDguMDg1OTM3em0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSIiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PC9nPiA8L3N2Zz4=" />
                 </a>

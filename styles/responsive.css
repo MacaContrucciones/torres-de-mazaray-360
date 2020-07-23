@@ -18,6 +18,9 @@
         align-items: center;
         justify-content: space-between;
     }
+    #miniatures {
+        display: none;
+    }
     #sh-button-container {
         display: none;
     }
