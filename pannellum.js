@@ -16,7 +16,7 @@ const imageNames = {
     },
     terrace: {
         name: 'Balcon terraza',
-        stringName: 'Balcon terraza',
+        stringName: 'Balcón terraza',
         blueprint: blueprints.plane
     },
     room: {
