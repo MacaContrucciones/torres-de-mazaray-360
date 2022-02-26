@@ -16,19 +16,26 @@
 
 /* Set a specific color for each brand */
 
-/* Facebook */
-.fa-facebook {
-    background: #3b5998;
+/* Youtube */
+#youtube {
+    background: #c00;
     color: white !important;
-    right: 30px;
-    top: 65px;
-    width: 15px;
+    right: 90px;
+    top: 64px;
 }
 
-/* Twitter */
-.fa-twitter {
-    background: #55acee;
+#instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
     color: white !important;
-    right: 70px;
+    right: 50px;
     top: 64px;
+}
+
+/* Facebook */
+#facebook {
+    background: #3b5998;
+    color: white !important;
+    right: 10px;
+    top: 65px;
+    width: 15px;
 }

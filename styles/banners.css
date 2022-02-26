@@ -64,7 +64,7 @@
     /* width: calc(100% - 160px); */
     text-align: right;
     background-image: url(./../assets/marco-inferior-blanco.png);
-    height: 128px;
+    height: 140px;
     background-size: cover;
     background-repeat: round;
     font-size: small;
@@ -106,7 +106,7 @@
     background-color: white;
     padding: 10px;
     margin-right: 5px;
-    box-shadow: 2px 2px #585454;
+    box-shadow: 2px 2px 5px #585454;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     position: absolute;

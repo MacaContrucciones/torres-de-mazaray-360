@@ -9,33 +9,20 @@
 @import "styles/responsive.css";
 @import "styles/modals.css";
 @import "styles/miniatures.css";
+@import "styles/hot-spot.css";
 
 :root {
     --primary-color: #c53736;
+    --color-primary: #c53736;
+    --darken-color-primary: #621b1b;
+    --color-secondary: #379585;
+    --hotspot-color: #c53736;
+    --contrast-color: lightslategray;
+    --back-blue: #283d76;
+    --light: white;
 }
 #container {
     position: absolute;
     top: 0;
     bottom: 0;
 }
-
-.hot-spot {
-    height: 20px;
-    width: 20px;
-    border-radius: 15px;
-    background-image: url(./assets/point.gif);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.hot-spot span {
-    background-color: var(--primary-color) !important;
-}
-
-.hot-spot span::after {
-    cursor: pointer;
-    border-color: var(--primary-color) transparent transparent transparent !important;
-}
-/* .pnlm-load-box {
-    z-index: -999;
-    opacity: 0;
-} */

@@ -3,47 +3,40 @@ const blueprints = {
     plane: {
         name: 'plane',
         image: 'assets/plane.png',
-        blueprintPoints: ['diningRoom', 'terrace', 'room', 'habPpal1', 'habPpal2', 'girlHab', 'boyHab']
+        blueprintPoints: ['HallDeAlcobas', 'SalaComedor', 'Estudio', 'cocina', 'AlcobaPrincipal', 'Alcoba2', 'Balcon']
     }
 };
 
 // Images
 const imageNames = {
-    diningRoom: {
-        name: 'Comedor',
-        stringName: 'Comedor',
+    cocina: {
+        name: 'Cocina',
         blueprint: blueprints.plane
     },
-    terrace: {
-        name: 'Balcon terraza',
-        stringName: 'Balcón terraza',
+    SalaComedor: {
+        name: 'Sala Comedor',
         blueprint: blueprints.plane
     },
-    room: {
-        name: 'Sala',
-        stringName: 'Sala',
+    Balcon: {
+        name: 'Balcon',
         blueprint: blueprints.plane
     },
-    habPpal1: {
-        name: 'Alcoba principal',
-        stringName: 'Alcoba principal',
+    Estudio: {
+        name: 'Estudio',
         blueprint: blueprints.plane
     },
-    habPpal2: {
-        name: 'Alcoba principal 2',
-        stringName: 'Alcoba principal',
+    HallDeAlcobas: {
+        name: 'Hall de alcobas',
         blueprint: blueprints.plane
     },
-    girlHab: {
-        name: 'Alcoba 1',
-        stringName: 'Alcoba 1',
-        blueprint: blueprints.plane
-    },
-    boyHab: {
+    Alcoba2: {
         name: 'Alcoba 2',
-        stringName: 'Alcoba 2',
         blueprint: blueprints.plane
-    }
+    },
+    AlcobaPrincipal: {
+        name: 'Alcoba principal',
+        blueprint: blueprints.plane
+    },
 };
 let sceneSelected = '';
 
@@ -52,272 +45,356 @@ const container = document.getElementById('container');
 let viewer = {};
 
 function createViewer() {
+    const width = document.body.clientWidth;
+    const hfov = width < 600 ? 80 : 120;
     viewer = pannellum.viewer(container, {
         default: {
-            firstScene: imageNames.diningRoom.name,
+            firstScene: imageNames.cocina.name,
             sceneFadeDuration: 2000
         },
         scenes: {
-            [imageNames.diningRoom.name]: {
-                hfov: 120.0,
-                yaw: 315,
+            [imageNames.cocina.name]: {
+                hfov,
+                yaw: 16,
                 type: 'multires',
                 multiRes: {
-                    basePath: './assets/multires/dining-room',
+                    basePath: './assets/multires/cocina',
                     path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/dining-room/fallback/%s',
+                    fallbackPath: './assets/multires/cocina/fallback/%s',
                     extension: 'jpg',
                     tileResolution: 512,
                     maxLevel: 4,
                     cubeResolution: 2600
                 },
-                blueprint: imageNames.diningRoom.blueprint,
-                gap: 90,
+                blueprint: imageNames.cocina.blueprint,
+                gap: -100,
                 hotSpots: [
                     {
-                        pitch: -2,
-                        yaw: 271,
-                        type: 'scene',
-                        text: imageNames.room.stringName,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: -2,
-                        yaw: 325,
-                        type: 'scene',
-                        text: imageNames.terrace.stringName,
-                        sceneId: imageNames.terrace.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.terrace.name]: {
-                hfov: 120.0,
-                yaw: 340,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/terrace',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/terrace/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.terrace.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
-                        pitch: 2,
-                        yaw: 132,
-                        type: 'scene',
-                        text: imageNames.diningRoom.stringName,
-                        sceneId: imageNames.diningRoom.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 3,
-                        yaw: 225,
-                        type: 'scene',
-                        text: imageNames.room.stringName,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.room.name]: {
-                hfov: 120.0,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/room',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/room/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.room.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
+                        yaw: 17,
                         pitch: 0,
-                        yaw: 50,
                         type: 'scene',
-                        text: imageNames.diningRoom.stringName,
-                        sceneId: imageNames.diningRoom.name,
-                        cssClass: 'hot-spot'
+                        sceneId: 'Sala Comedor',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Sala Comedor"
                     },
                     {
-                        pitch: 0,
-                        yaw: 340,
-                        type: 'scene',
-                        text: imageNames.terrace.stringName,
-                        sceneId: imageNames.terrace.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 231,
-                        type: 'scene',
-                        text: imageNames.habPpal1.stringName,
-                        sceneId: imageNames.habPpal1.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 241,
-                        type: 'scene',
-                        text: imageNames.boyHab.stringName,
-                        sceneId: imageNames.boyHab.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 244,
-                        type: 'scene',
-                        text: imageNames.girlHab.stringName,
-                        sceneId: imageNames.girlHab.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.habPpal1.name]: {
-                hfov: 120.0,
-                yaw: 210,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/hab-ppal-1',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab-ppal-1/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.habPpal1.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
-                        pitch: -3,
-                        yaw: 263,
-                        type: 'scene',
-                        text: imageNames.habPpal2.stringName,
-                        sceneId: imageNames.habPpal2.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
-                        yaw: 15,
-                        type: 'scene',
-                        text: imageNames.boyHab.stringName,
-                        sceneId: imageNames.boyHab.name,
-                        cssClass: 'hot-spot'
-                    },
-                    {
-                        pitch: 0,
                         yaw: 40,
-                        type: 'scene',
-                        text: imageNames.girlHab.stringName,
-                        sceneId: imageNames.girlHab.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.habPpal2.name]: {
-                hfov: 120.0,
-                yaw: 130,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/hab-ppal-2',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/hab-ppal-2/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.habPpal2.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
                         pitch: 0,
-                        yaw: 81,
                         type: 'scene',
-                        text: imageNames.habPpal1.stringName,
-                        sceneId: imageNames.habPpal1.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.girlHab.name]: {
-                hfov: 120.0,
-                yaw: 30,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/girl-hab',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/girl-hab/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.girlHab.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
-                        pitch: 3,
-                        yaw: 157,
-                        type: 'scene',
-                        text: imageNames.room.stringName,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
-                    }
-                ]
-            },
-            [imageNames.boyHab.name]: {
-                hfov: 120.0,
-                yaw: 340,
-                type: 'multires',
-                multiRes: {
-                    basePath: './assets/multires/boy-hab',
-                    path: '/%l/%s%y_%x',
-                    fallbackPath: './assets/multires/boy-hab/fallback/%s',
-                    extension: 'jpg',
-                    tileResolution: 512,
-                    maxLevel: 4,
-                    cubeResolution: 2600
-                },
-                blueprint: imageNames.boyHab.blueprint,
-                gap: 90,
-                hotSpots: [
-                    {
-                        pitch: -1,
-                        yaw: 178,
-                        type: 'scene',
-                        text: imageNames.habPpal1.stringName,
-                        sceneId: imageNames.habPpal1.name,
-                        cssClass: 'hot-spot'
+                        sceneId: 'Estudio',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Estudio"
                     },
                     {
-                        pitch: -1,
-                        yaw: 135,
+                        yaw: 75,
+                        pitch: 0,
                         type: 'scene',
-                        text: imageNames.room.stringName,
-                        sceneId: imageNames.room.name,
-                        cssClass: 'hot-spot'
+                        sceneId: 'Hall de alcobas',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Hall Alcobas"
+                    }
+                ]
+            },
+            [imageNames.SalaComedor.name]: {
+                hfov,
+                yaw: -75,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/SalaComedor',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/SalaComedor/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.SalaComedor.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        yaw: -45,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Balcon',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Balcón"
+                    },
+                    {
+                        yaw: -5,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Estudio',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Estudio"
+                    },
+                    {
+                        yaw: 39,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Hall de alcobas',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Hall Alcobas"
+                    },
+                    {
+                        yaw: 84,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Cocina',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Cocina"
+                    }
+                ]
+            },
+            [imageNames.Balcon.name]: {
+                hfov,
+                yaw: 98,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/Balcon',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/Balcon/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.Balcon.blueprint,
+                gap: -120,
+                hotSpots: [
+                    {
+                        yaw: 165,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Alcoba 2',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Alcoba 2"
+                    },
+                    {
+                        yaw: -149,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Estudio',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Estudio"
+                    },
+                    {
+                        yaw: -78,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Sala Comedor',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Sala Comedor"
+                    }
+                ]
+            },
+            [imageNames.Estudio.name]: {
+                hfov,
+                yaw: -53,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/Estudio',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/Estudio/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.Estudio.blueprint,
+                gap: 100,
+                hotSpots: [
+                    {
+                        yaw: -156,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Balcon',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Balcón"
+                    },
+                    {
+                        yaw: -37,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Hall de alcobas',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Hall de alcobas"
+                    },
+                    {
+                        yaw: 38,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Cocina',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Cocina"
+                    },
+                    {
+                        yaw: 80,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Sala Comedor',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Sala Comedor"
+                    }
+                ]
+            },
+            [imageNames.HallDeAlcobas.name]: {
+                hfov,
+                yaw: -142,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/HallDeAlcobas',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/HallDeAlcobas/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.HallDeAlcobas.blueprint,
+                gap: 160,
+                hotSpots: [
+                    {
+                        yaw: 108,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Estudio',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Estudio"
+                    },
+                    {
+                        yaw: 154,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Alcoba 2',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Alcoba 2"
+                    },
+                    {
+                        yaw: -140,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Alcoba principal',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Alcoba principal"
+                    },
+                    {
+                        yaw: 22,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Sala Comedor',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Sala Comedor"
+                    },
+                    {
+                        yaw: -72,
+                        type: 'info',
+                        cssClass: "image-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Baño Social",
+                        clickHandlerFunc: openImageModal,
+                        clickHandlerArgs: './assets/Bano Social.jpg'
+                    }
+                ]
+            },
+            [imageNames.Alcoba2.name]: {
+                hfov,
+                yaw: 23,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/Alcoba2',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/Alcoba2/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.Alcoba2.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        yaw: 67,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Hall de alcobas',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Hall de alcobas"
+                    },
+                    {
+                        yaw: -142,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Balcon',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Balcon"
+                    }
+                ]
+            },
+            [imageNames.AlcobaPrincipal.name]: {
+                hfov,
+                yaw: 21,
+                type: 'multires',
+                multiRes: {
+                    basePath: './assets/multires/AlcobaPrincipal',
+                    path: '/%l/%s%y_%x',
+                    fallbackPath: './assets/multires/AlcobaPrincipal/fallback/%s',
+                    extension: 'jpg',
+                    tileResolution: 512,
+                    maxLevel: 4,
+                    cubeResolution: 2600
+                },
+                blueprint: imageNames.AlcobaPrincipal.blueprint,
+                gap: 0,
+                hotSpots: [
+                    {
+                        yaw: -66,
+                        pitch: 0,
+                        type: 'scene',
+                        sceneId: 'Hall de alcobas',
+                        cssClass: "custom-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Hall de alcobas"
+                    },
+                    {
+                        yaw: -155,
+                        type: 'info',
+                        cssClass: "image-hotspot",
+                        createTooltipFunc: hotspot,
+                        createTooltipArgs: "Baño Alcoba Ppal",
+                        clickHandlerFunc: openImageModal,
+                        clickHandlerArgs: './assets/Bano.jpg'
                     }
                 ]
             }
         },
         showControls: false,
         autoLoad: true,
-        autoRotate: -5,
-        backgroundColor: [255, 255, 255]
+        backgroundColor: [255, 255, 255],
+        hotSpotDebug: false
     });
     sceneSelected = viewer.getScene();
+    const img = document.getElementById('images-Cocina');
+    img.style.border = '3px solid #c53736';
     viewerEvents();
 }
 
@@ -346,8 +423,9 @@ function viewerEvents() {
             path.setAttributeNS(null, 'd', generateSvgPath());
         }
     });
-    viewer.on('scenechange', () => {
+    viewer.on('scenechange', (sceneId) => {
         mobileSetHfov();
+        changeImgSelected(sceneId);
     });
 }
 
@@ -468,14 +546,12 @@ function createScreenList() {
     const screensList = document.getElementById('screens-list');
     const mobileScreensList = document.getElementById('mobile-screens-list');
     const currentScene = viewer.getScene();
-    let stringCurrentScene = currentScene;
     for (const image in imageNames) {
         if (imageNames.hasOwnProperty(image)) {
             const element = imageNames[image];
             let div = document.createElement('div');
             div.setAttributeNS(null, 'id', element.name);
             if (currentScene === element.name) {
-                stringCurrentScene = element.stringName;
                 div.setAttributeNS(null, 'class', 'screen-item screen-selected');
             } else {
                 div.setAttributeNS(null, 'class', 'screen-item');
@@ -487,25 +563,41 @@ function createScreenList() {
                 div.addEventListener('click', () => loadScene(element.name) & toggleMobileScreenList());
                 mobileScreensList.appendChild(div);
             }
-            div.innerHTML += element.stringName;
+            div.innerHTML += element.name;
         }
     }
-    document.getElementById('screens-title').innerHTML = stringCurrentScene;
-    document.getElementById('mobile-screens-title').innerHTML = stringCurrentScene;
+    document.getElementById('screens-title').innerHTML = currentScene;
+    document.getElementById('mobile-screens-title').innerHTML = currentScene;
 }
 function loadScene(sceneId) {
     if (sceneId !== viewer.getScene()) {
         viewer.loadScene(sceneId);
         setScene(sceneId);
+        changeImgSelected(sceneId);
     }
 }
+function changeImgSelected(sceneId) {
+    const img = document.getElementById('images-' + sceneId);
+    const imgs = document.getElementById('images');
+    const images = imgs.getElementsByTagName('img');
+    for (const i of images) {
+        i.style.border = 'none';
+    }
+    if (img) {
+        img.style.border = '3px solid #c53736';
+    }
+}
+
 function setScene(sceneId) {
+    document.getElementById('screens-title').innerHTML = sceneId;
+    document.getElementById('mobile-screens-title').innerHTML = sceneId;
     const currentScene = document.getElementById(sceneSelected);
-    currentScene.setAttributeNS(null, 'class', 'screen-item');
-    const newScene = document.getElementById(sceneId);
-    newScene.setAttributeNS(null, 'class', 'screen-item screen-selected');
-    document.getElementById('screens-title').innerHTML = newScene.innerHTML;
-    document.getElementById('mobile-screens-title').innerHTML = newScene.innerHTML;
+    if (currentScene) {
+        currentScene.setAttributeNS(null, 'class', 'screen-item');
+    }
+    if (document.getElementById(sceneId)) {
+        document.getElementById(sceneId).setAttributeNS(null, 'class', 'screen-item screen-selected');
+    }
     sceneSelected = viewer.getScene();
 }
 
@@ -513,10 +605,12 @@ function setScene(sceneId) {
  * BLUEPRINT FUNCTIONS
  */
 function createBlueprintImage() {
-    const blueprints = document.getElementById('blueprints');
+    const container = document.getElementById('container');
     let img = document.createElement('img');
+    img.style.display = 'none';
     img.setAttributeNS(null, 'id', 'blueprint-image');
-    blueprints.appendChild(img);
+    // blueprints.appendChild(img);
+    container.appendChild(img);
 }
 function setBlueprintImage() {
     const config = viewer.getConfig();
@@ -553,7 +647,7 @@ function addBlueprintPoints() {
                 divPoint.addEventListener('click', () => loadScene(imageNames[point].name));
                 let label = document.createElement('label');
                 label.setAttributeNS(null, 'class', 'blueprints-label');
-                label.innerHTML = imageNames[point].stringName;
+                label.innerHTML = imageNames[point].name;
                 divPoint.appendChild(label);
                 container.appendChild(divPoint);
             }
@@ -563,6 +657,7 @@ function addBlueprintPoints() {
 }
 function toggleBlueprints() {
     const blueprints = document.getElementById('blueprints');
+    const img = document.getElementById('blueprint-image');
     if (blueprints.style.display !== 'block') {
         blueprints.style.display = 'block';
         const point = document.getElementsByName(viewer.getScene());
@@ -570,8 +665,10 @@ function toggleBlueprints() {
         svgGuide.style.left = point[0].offsetLeft - 46 + 'px';
         svgGuide.style.top = point[0].offsetTop - 45 + 'px';
         svgGuide.style.visibility = 'visible';
+        img.style.display = 'block';
     } else {
         blueprints.style.display = 'none';
+        img.style.display = 'none';
     }
 }
 
@@ -674,6 +771,29 @@ window.onclick = function (event) {
         shButtons.style.display = 'none';
     }
 }
+
+// Hot spot creation function
+function hotspot(hotSpotDiv, args) {
+    hotSpotDiv.classList.add('custom-tooltip');
+    const span = document.createElement('span');
+    span.innerHTML = args;
+    hotSpotDiv.appendChild(span);
+    span.style.width = span.scrollWidth - 20 + 'px';
+    if (hotSpotDiv.offsetWidth) {
+        span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+    } else {
+        span.style.marginLeft = -(span.scrollWidth - 14.8) / 2 + 'px';
+    }
+    span.style.marginTop = -span.scrollHeight - 18 + 'px';
+}
+
+
+function openImageModal(event, args) {
+    const img = document.getElementById('image-modal-img');
+    img.src = args;
+    $('#image-modal').modal({});
+}
+
 
 createViewer();
 createScreenList();

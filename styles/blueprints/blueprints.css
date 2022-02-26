@@ -8,18 +8,29 @@
     position: absolute;
     visibility: inherit;
     width: 300px;
+    height: 220px;
     transform-origin: 50% 50%;
     z-index: 2;
     text-align: center;
     display: none;
 }
-.blueprints img {
-    width: 100%;
+#blueprint-image {
+    /* width: 100%;
+    height: 220px;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    margin-top: 10px;
+    border-radius: 5px; */
+    width: 300px;
     height: 220px;
     -webkit-user-drag: none;
     pointer-events: none;
     margin-top: 10px;
     border-radius: 5px;
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+    right: 0;
 }
 .blueprints-button {
     border-radius: 999px;
@@ -27,13 +38,17 @@
     border: 0px solid rgb(0, 0, 0);
     cursor: pointer;
     pointer-events: auto;
-    height: 10px;
+    height: 15px;
     position: absolute;
     visibility: inherit;
-    width: 10px;
+    width: 15px;
     transform-origin: 50% 50%;
     z-index: 2;
     transition: width 0s ease 0s, height 0s ease 0s;
+}
+.blueprints-button:hover {
+    background: var(--darken-color-primary);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.1, 1.1);
 }
 .guide-svg {
     position: absolute;
@@ -45,9 +60,11 @@
 }
 
 .blueprints-label {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: -15px;
     font-weight: bold;
+    color: var(--light);
+    text-shadow: rgb(0 0 0) 2px 2px 3px;
 }

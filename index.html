@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristales</title>
+    <title>Torres de Mazaray</title>
     <script src="./pannellum/pannellum.js"></script>
     <link rel="stylesheet" href="./pannellum/pannellum.css" />
     <link rel="stylesheet" href="./styles.css" />
@@ -82,21 +82,20 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </a>
             <div class="images" id="images">
-                <img src="assets/miniatures/dining-room.png" alt="Dinning room" class="w-100"
-                    onclick="loadScene('Comedor')" data-toggle="tooltip" data-placement="bottom" title="Comedor">
-                <img src="assets/miniatures/room.png" alt="Room" class="w-100" onclick="loadScene('Sala')"
-                    data-toggle="tooltip" data-placement="bottom" title="Sala">
-                <img src="assets/miniatures/terrace.png" alt="Terrace" class="w-100"
-                    onclick="loadScene('Balcon terraza')" data-toggle="tooltip" data-placement="bottom"
-                    title="Balcón terraza">
-                <img src="assets/miniatures/Hab1.png" alt="Hab1" class="w-100" onclick="loadScene('Alcoba principal')"
-                    data-toggle="tooltip" data-placement="bottom" title="Alcoba principal">
-                <img src="assets/miniatures/Hab2.png" alt="Hab2" class="w-100" onclick="loadScene('Alcoba principal 2')"
-                    data-toggle="tooltip" data-placement="bottom" title="Alcoba principal">
-                <img src="assets/miniatures/girl-hab.png" alt="Girl hab" class="w-100" onclick="loadScene('Alcoba 1')"
-                    data-toggle="tooltip" data-placement="bottom" title="Alcoba 1">
-                <img src="assets/miniatures/boy-hab.png" alt="Boy hab" class="w-100" onclick="loadScene('Alcoba 2')"
-                    data-toggle="tooltip" data-placement="bottom" title="Alcoba 2">
+                <img src="assets/miniatures/cocina.jpg" alt="Cocina" onclick="loadScene('Cocina')" data-toggle="tooltip"
+                    data-placement="bottom" title="Comedor" id="images-Cocina">
+                <img src="assets/miniatures/sala.jpg" alt="Room" onclick="loadScene('Sala Comedor')"
+                    data-toggle="tooltip" data-placement="bottom" title="Sala" id="images-Sala Comedor">
+                <img src="assets/miniatures/balcon.jpg" alt="Balcón" onclick="loadScene('Balcon')" data-toggle="tooltip"
+                    data-placement="bottom" title="Balcón" id="images-Balcon">
+                <img src="assets/miniatures/Estudio.jpg" alt="Estudio" onclick="loadScene('Estudio')"
+                    data-toggle="tooltip" data-placement="bottom" title="Estudio" id="images-Estudio">
+                <img src="assets/miniatures/hall.jpg" alt="Hab2" onclick="loadScene('Hall de alcobas')"
+                    data-toggle="tooltip" data-placement="bottom" title="Hall de alcobas" id="images-Hall de alcobas">
+                <img src="assets/miniatures/alcoba2.jpg" alt="Girl hab" onclick="loadScene('Alcoba 2')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba 2" id="images-Alcoba 2">
+                <img src="assets/miniatures/acobap.jpg" alt="Boy hab" onclick="loadScene('Alcoba principal')"
+                    data-toggle="tooltip" data-placement="bottom" title="Alcoba Principal" id="images-Alcoba principal">
             </div>
             <a class="arrow" data-scroll-modifier='1' href="JavaScript:void(0);" onmouseenter="startScrolling(1)"
                 onmouseleave="stopScrolling()">
@@ -108,13 +107,13 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         <div id="banners">
             <!-- Top -->
             <div class="top-banner">
-                <img src="assets/builder-logo.png" alt="builder" id="builder-image"
-                    onclick="openLink('https://www.macaconstrucciones.com')">
+                <img src="assets/builder-logo.png" alt="builder" id="builder-image" data-toggle="tooltip"
+                    title="Maca Construcciones" onclick="openLink('https://www.macaconstrucciones.com')">
             </div>
             <!-- Bottom -->
             <div class="bottom-banner">
-                <img src="assets/urbanization.png" alt="urbanization" id="urbanization-image"
-                    onclick="openLink('https://www.cristalesllanometa.com')">
+                <img src="assets/urbanization.png" alt="urbanization" id="urbanization-image" data-toggle="tooltip"
+                    title="Proyecto Torre de Mazaray" onclick="openLink('https://www.cristalesllanometa.com')">
                 <!-- Screens list -->
                 <div class="screens">
                     <div class="screens-list" id="screens-list">
@@ -133,7 +132,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <label id="title" class="w-100">Apartamento</label>
                 <label id="area">73,33 M<sup>2</sup></label>
                 <label id="extra">
-                    Área construida - incluye balcón terraza
+                    Área construida - incluye balcón
                 </label>
             </div>
         </div>
@@ -155,7 +154,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
             <!-- WhatsApp button -->
             <div class="action-button-container">
                 <a id="whats-app-button" class="action-button"
-                    href="https:api.whatsapp.com\/send?phone=+573168887778&text=Hola! me gustaría recibir más información del proyecto de Cristales del llano."
+                    href="https:\/\/api.whatsapp.com\/send?phone=573188009898&text=Vi%20el%20Recorrido%20360%20del%20proyecto%20Torres%20de%20Mazaray%20Ibague%2072m2,%20quisiera%20conocer%20m%C3%A1s%20informaci%C3%B3n&source=&data="
                     target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
                         <path
@@ -174,14 +173,14 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                 <div class="message" id="blueprints-message">Plano</div>
             </div>
             <!-- Gallery button -->
-            <div class="action-button-container" data-toggle="modal" data-target="#gallery-modal">
+            <!-- <div class="action-button-container" data-toggle="modal" data-target="#gallery-modal">
                 <a id="gallery-button" class="action-button">
                     <img
                         src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00MDIsMTY2Yy01LjUyLDAtMTAsNC40OC0xMCwxMHM0LjQ4LDEwLDEwLDEwYzUuNTIsMCwxMC00LjQ4LDEwLTEwUzQwNy41MiwxNjYsNDAyLDE2NnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4MiwxMjZIMzcyLjE4bC0zMS43MDYtNjMuNDEzQzMzNS4zNTcsNTIuMzU2LDMyNS4wNzUsNDYsMzEzLjY0LDQ2SDE5OC4zNmMtMTEuNDM3LDAtMjEuNzE5LDYuMzU2LTI2LjgzNCwxNi41ODggICAgTDEzOS44MiwxMjZIMTIwdi0xMGMwLTE2LjU0Mi0xMy40NTgtMzAtMzAtMzBINzBjLTE2LjU0MiwwLTMwLDEzLjQ1OC0zMCwzMHYxMEgzMGMtMTYuNTQyLDAtMzAsMTMuNDU4LTMwLDMwICAgIGMwLDI3LjE3NSwwLDI2OS40MjksMCwyODBjMCwxNi41NDIsMTMuNDU4LDMwLDMwLDMwaDQ1MmMxNi41NDIsMCwzMC0xMy40NTgsMzAtMzBjMC0yNy4xNzUsMC0yNjkuNDI5LDAtMjgwICAgIEM1MTIsMTM5LjQ1OCw0OTguNTQyLDEyNiw0ODIsMTI2eiBNMTg5LjQxNSw3MS41MzJDMTkxLjEyMSw2OC4xMiwxOTQuNTQ4LDY2LDE5OC4zNiw2NmgxMTUuMjhjMy44MTIsMCw3LjI0LDIuMTIsOC45NDYsNS41MzIgICAgTDM0OS44MiwxMjZIMTYyLjE4TDE4OS40MTUsNzEuNTMyeiBNNjAsMTE2YzAtNS41MTQsNC40ODYtMTAsMTAtMTBoMjBjNS41MTQsMCwxMCw0LjQ4NiwxMCwxMHYxMEg2MFYxMTZ6IE0yMCwyMjUuOWgxMjYuNDUxICAgIEMxMzMuMTYxLDI0Ni42NjEsMTI2LDI3MC45OTIsMTI2LDI5NmMwLDI1LjAxLDcuMTYyLDQ5LjI0MywyMC40NSw3MEgyMFYyMjUuOXogTTI1NiwxODZjNjAuMTMzLDAsMTEwLDQ4LjcxOSwxMTAsMTEwICAgIGMwLDYxLjIxMi00OS43OTcsMTEwLTExMCwxMTBjLTYwLjI1NywwLTExMC00OC44NDItMTEwLTExMEMxNDYsMjM0Ljc5NSwxOTUuNzksMTg2LDI1NiwxODZ6IE00OTIsNDM2YzAsNS41MTQtNC40ODYsMTAtMTAsMTBIMzAgICAgYy01LjUxNCwwLTEwLTQuNDg2LTEwLTEwdi01MGgxNDIuMjI2YzI0LjQzNSwyNS40NzIsNTguMzQ5LDQwLDkzLjc3NCw0MGMzNS40MzEsMCw2OS4zNDgtMTQuNTMyLDkzLjc3NS00MEg0OTJWNDM2eiBNNDkyLDM2NiAgICBIMzY1LjU0OUMzNzguODM5LDM0NS4yMzksMzg2LDMyMS4wMDksMzg2LDI5NmMwLTI1LjAwOS03LjE2MS00OS4yMzktMjAuNDUxLTcwSDQ5MlYzNjZ6IE00OTIsMjA2SDM0OS43NzQgICAgYy0yNC40MzQtMjUuNDcyLTU4LjM0OC00MC05My43NzQtNDBjLTM1LjQzLDAtNjkuMzQ3LDE0LjUzMi05My43NzUsNDBIMjB2LTUwYzAtNS41MTQsNC40ODYtMTAsMTAtMTBjOS4wODEsMCw0MzcuOTQyLDAsNDUyLDAgICAgYzUuNTE0LDAsMTAsNC40ODYsMTAsMTBWMjA2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg2LDg2aC02MGMtNS41MjMsMC0xMCw0LjQ3Ny0xMCwxMHM0LjQ3NywxMCwxMCwxMGg2MGM1LjUyMiwwLDEwLTQuNDc3LDEwLTEwUzI5MS41MjIsODYsMjg2LDg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDIwNmMtNDkuNjI2LDAtOTAsNDAuMzc0LTkwLDkwYzAsNDkuNjI2LDQwLjM3NCw5MCw5MCw5MGM0OS42MjYsMCw5MC00MC4zNzQsOTAtOTBDMzQ2LDI0Ni4zNzQsMzA1LjYyNiwyMDYsMjU2LDIwNnogICAgIE0yNTYsMzY2Yy0zOC41OTgsMC03MC0zMS40MDItNzAtNzBjMC0zOC41OTgsMzEuNDAyLTcwLDcwLTcwczcwLDMxLjQwMiw3MCw3MEMzMjYsMzM0LjU5OCwyOTQuNTk4LDM2NiwyNTYsMzY2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDI0NmMtMjcuNTcsMC01MCwyMi40My01MCw1MGMwLDUuNTIzLDQuNDc3LDEwLDEwLDEwczEwLTQuNDc3LDEwLTEwYzAtMTYuNTQyLDEzLjQ1OC0zMCwzMC0zMCAgICBjNS41MjIsMCwxMC00LjQ3NywxMC0xMFMyNjEuNTIyLDI0NiwyNTYsMjQ2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDYyLDE2NmgtMjBjLTUuNTIyLDAtMTAsNC40NzctMTAsMTBzNC40NzgsMTAsMTAsMTBoMjBjNS41MjIsMCwxMC00LjQ3NywxMC0xMFM0NjcuNTIyLDE2Niw0NjIsMTY2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=" />
                 </a>
                 <div class="message" id="gallery-message">Galería</div>
-            </div>
+            </div> -->
             <!-- Information button -->
             <div class="action-button-container">
                 <a id="information-button" class="action-button" data-toggle="modal" data-target="#information-modal">
@@ -241,10 +240,12 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 
         <!-- Sh buttons -->
         <div id="sh-buttons" class="sh-buttons">
-            <a class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter" id="twitter"
-                target="_blank" onclick="shTwitter()"></a>
+            <a class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="You Tube" id="youtube"
+                target="_blank" href="https://www.youtube.com/channel/UC7Lno8DjmsmK8F9mUXDBEeA"></a>
+            <a class="fa fa-instagram" data-toggle="tooltip" data-placement="bottom" title="Instagram" id="instagram"
+                target="_blank" href="https://www.instagram.com/macaconstrucciones"></a>
             <a class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook" id="facebook"
-                target="_blank" onclick="shFacebook()"></a>
+                target="_blank" href="https://www.facebook.com/construccionesmaca"></a>
         </div>
 
     </div>
@@ -263,29 +264,42 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
                         CONTÁCTANOS
                     </h4>
                     <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    <a href="tel:+573165557775">316 8887778</a>
+                    <a href="tel:+573188009898">318 800 9898</a>
                     <br>
                     <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    <a href="tel:+573165557775">318 3730073</a>
+                    <a href="tel:+573168600079">316 860 0079</a>
                     <br>
                     <h5 id="title" class="mt-3">
                         SALA DE VENTAS
                     </h5>
                     <h6 class="mt-3"> HORARIO </h6>
-                    <label>Lun a Sab: 8 am - 6 pm</label> <br>
-                    <label>Dom: 10 am - 6 pm</label>
+                    <label>Lun a Dom: 8:30 am - 6 pm</label> <br>
                     <h6 class="mt-2"> DIRECCIÓN </h6>
                     <p>
-                        Cra 7 # 9-75
+                        Avenida Guabinal con calle 39
                         <br>
-                        Barrio Manantial, Restrepo, Meta
+                        Sector Cámbulos
                     </p>
                     <h6 class="mt-2"> PÁGINAS WEB </h6>
-                    <a href="https://www.cristalesllanometa.com">cristalesllanometa.com</a>
+                    <a href="https://www.macaconstrucciones.com/proyecto/torre-de-mazaray/">
+                        Proyecto Torre de Mazaray
+                    </a>
                     <br>
                     <a href="https://www.macaconstrucciones.com">macaconstrucciones.com</a>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <!-- Image modal -->
+    <div class="modal fade" id="image-modal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content bg-transparent border-0" id="image-modal-content">
+                <div class="modal-header border-0">
+                    <a type="button" class="close text-white font-weight-bold" data-dismiss="modal">×</a>
+                </div>
+                <img alt="Image" id="image-modal-img" style="max-height: 90%; object-fit: scale-down;">
             </div>
         </div>
     </div>
